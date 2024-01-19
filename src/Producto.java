@@ -1,11 +1,12 @@
+
 public class Producto {
     private String nombre;
-    private int precio;
+    private double precio;
     private int numeroReferencia;
     private int cantidad;
-    private Categoria categoria;
+    private String categoria;
 
-    public Producto(String nombre, int precio, int numeroReferencia, int cantidad, Categoria categoria) {
+    public Producto(String nombre, double precio, int numeroReferencia, int cantidad, String categoria) {
         this.nombre = nombre;
         this.precio = precio;
         this.numeroReferencia = numeroReferencia;
@@ -21,11 +22,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
@@ -45,16 +46,30 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-    public Categoria getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
-    public String toString() {
-        return "Nombre: " + nombre + "\nPrecio: " + precio + "\nCantidad: " + cantidad;
+    public String mostrarProducto() {
+        String mensaje = "Nombre: " + nombre + "\n"
+                + "Precio: " + precio + "\n"
+                + "Numero de Referencia: " + numeroReferencia + "\n"
+                + "Cantidad: " + cantidad + "\n"
+                + "Categoria: " + categoria;
+        return mensaje;
+        
     }
+    @Override
+    public String toString() {
+        return "Producto [cantidad=" + cantidad + ", categoria=" + categoria + ", nombre=" + nombre
+                + ", numeroReferencia=" + numeroReferencia + ", precio=" + precio + "]";
+    }
+
+
+
 
 }
